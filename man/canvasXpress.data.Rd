@@ -4,7 +4,7 @@
 \name{canvasXpress.data}
 \alias{canvasXpress.data}
 \alias{canvasXpress.data-package}
-\title{CanavasXpress datasets.}
+\title{canvasXpress datasets}
 \description{
-This package contains data for the CanvasXpress package.
+This package contains data for the canvasXpress R package
 }

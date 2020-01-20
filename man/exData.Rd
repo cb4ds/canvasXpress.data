@@ -3,12 +3,12 @@
 \docType{data}
 \name{exData}
 \alias{exData}
-\title{IPF Fibroblast data.}
-\format{A list of 4 dataframes.}
+\title{IPF Fibroblast data}
+\format{A list of 4 dataframes}
 \usage{
 exData
 }
 \description{
-IPF Fibroblast data.
+IPF Fibroblast data
 }
 \keyword{datasets}

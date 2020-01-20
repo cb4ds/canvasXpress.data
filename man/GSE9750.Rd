@@ -3,12 +3,12 @@
 \docType{data}
 \name{GSE9750}
 \alias{GSE9750}
-\title{Identification of gene expression profiles in cervical cancer.}
-\format{A list of 3 dataframes.}
+\title{Identification of gene expression profiles in cervical cancer}
+\format{A list of 3 dataframes}
 \usage{
 GSE9750
 }
 \description{
-Identification of gene expression profiles in cervical cancer.
+Identification of gene expression profiles in cervical cancer
 }
 \keyword{datasets}

@@ -13,7 +13,7 @@ cXarea1 <- function() {
     objectColorTransparency=0.3,
     showLegend=FALSE,
     showSampleNames=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Steam Plot"
   )
 }
@@ -29,7 +29,7 @@ cXarea2 <- function() {
     lineType="spline",
     objectBorderColor=FALSE,
     objectColorTransparency=0.3,
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelInterval=20,
     smpLabelRotate=45,
     smpTitle="Year",
@@ -52,7 +52,7 @@ cXarea3 <- function() {
     graphType="Area",
     legendPosition="right",
     lineType="spline",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelInterval=20,
     smpLabelRotate=45,
     smpTitle="Year",
@@ -205,7 +205,7 @@ cXbar1 <- function() {
     graphOrientation="vertical",
     graphType="Bar",
     theme="CanvasXpress",
-    title="Simple Bar graph"
+    title="Bar Graph Title"
   )
 }
 
@@ -223,7 +223,7 @@ cXbar2 <- function() {
     graphType="Stacked",
     legendInside=TRUE,
     legendPosition="top",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=45,
     subtitle="2014 Census",
     title="Country Population colored by Gross National Income",
@@ -261,7 +261,7 @@ cXbar4 <- function() {
     graphType="Bar",
     legendColumns=2,
     legendPosition="bottom",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=90,
     smpTitle="Species",
     title="Iris flower data set",
@@ -333,7 +333,7 @@ cXbar7 <- function() {
     smpOverlays=list("Drug Sensitivity"),
     smpTitle="Cell Lines",
     smpTitleFontStyle="bold",
-    theme="CanavasXpress",
+    theme="CanvasXpress",
     title="Random data set",
     xAxis2Show=FALSE
   )
@@ -348,7 +348,7 @@ cXbar8 <- function() {
     barType="lollipop",
     colorScheme="CanvasXpress",
     graphType="Bar",
-    showTransition=TRUE,
+    showTransition=FALSE,
     widthFactor=0.1
   )
 }
@@ -441,7 +441,7 @@ cXbarline1 <- function() {
     legendPosition="bottom",
     lineThickness=2,
     lineType="spline",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=45,
     smpTitle="Collection of Samples",
     subtitle="Random Data",
@@ -1114,6 +1114,19 @@ cXboxplot18 <- function() {
   )
 }
 
+cXboxplot19 <- function() {
+  library(canvasXpress)
+  y=read.table(get_data("cX-exprtcga-dat.txt.gz"), header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+  x=read.table(get_data("cX-exprtcga-smp.txt.gz"), header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+  canvasXpress(
+    data=y,
+    smpAnnot=x,
+    graphOrientation="vertical",
+    graphType="Boxplot",
+    groupingFactors=list("dataset")
+  )
+}
+
 cXbubble1 <- function() {
   library(canvasXpress)
   y=read.table(get_data("cX-tree-dat.txt.gz"), header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
@@ -1123,7 +1136,7 @@ cXbubble1 <- function() {
     smpAnnot=x,
     circularType="bubble",
     graphType="Circular",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Simple Bubble Graph"
   )
@@ -1141,7 +1154,7 @@ cXbubble2 <- function() {
     colorBy="Level1",
     graphType="Circular",
     hierarchy=list("Level1", "Level2", "Level3"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Hierarchical Colored Bubble Graph"
   )
 }
@@ -1157,7 +1170,7 @@ cXbubble3 <- function() {
     circularType="bubble",
     graphType="Circular",
     hierarchy=list("Level1", "Level2", "Level3"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Hierarchical Bubble Graph"
   )
 }
@@ -1174,7 +1187,7 @@ cXchord1 <- function() {
     graphType="Circular",
     higlightGreyOut=TRUE,
     rAxisTickFormat=list("%sK", "val / 1000"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Simple Chord Graph",
     transitionStep=50,
     transitionTime=1500
@@ -1192,7 +1205,7 @@ cXchord2 <- function() {
     graphType="Circular",
     higlightGreyOut=TRUE,
     rAxisTickFormat=list("%sK", "val / 1000"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Rotated Chord Graph",
     transitionStep=50,
@@ -1212,7 +1225,7 @@ cXchord3 <- function() {
     higlightGreyOut=TRUE,
     rAxisTickFormat=list("%sK", "val / 1000"),
     showLegend=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Rotated Half Chord Graph",
     transitionStep=50,
@@ -1235,7 +1248,7 @@ cXcircular1 <- function() {
     ringGraphWeight=list(50, 25, 25),
     segregateSamplesBy=list("Species"),
     segregateVariablesBy=list("Ring"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpOverlays=list("Species"),
     title="Iris flower data set (1D Circular Plot)",
     transitionStep=50,
@@ -1258,7 +1271,7 @@ cXcircular2 <- function() {
     ringGraphWeight=list(25, 25, 25, 25),
     segregateSamplesBy=list("Species"),
     segregateVariablesBy=list("Ring"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Iris flower data set (2D Circular Plot)",
     transitionStep=50,
     transitionTime=1500
@@ -1423,7 +1436,7 @@ cXcorrelation1 <- function() {
     varAnnot=z,
     correlationAxis="samples",
     graphType="Correlation",
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Correlation Plot",
     yAxisTitle="Correlation Title"
   )
@@ -1441,7 +1454,7 @@ cXcorrelation2 <- function() {
     correlationAxis="samples",
     correlationType="circle",
     graphType="Correlation",
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Correlation Plot",
     yAxisTitle="Correlation Title"
   )
@@ -1614,7 +1627,7 @@ cXdonnut1 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     hierarchy=list("Month"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Simple Donnut",
     transitionStep=50,
     transitionTime=1500
@@ -1635,7 +1648,7 @@ cXdonnut2 <- function() {
     colorScheme="RdYlBu",
     graphType="Circular",
     hierarchy=list("Quarter", "Month"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Donnut with two levels",
     transitionStep=50,
     transitionTime=1500
@@ -1733,8 +1746,6 @@ cXdotplot1 <- function() {
     graphType="Dotplot",
     legendColumns=2,
     lineType="spline",
-    showAnimation=FALSE,
-    showTransition=TRUE,
     smpLabelRotate=45,
     smpOverlays=list("Factor1", "Factor2", "Factor3"),
     smpTitle="Collection of Samples",
@@ -1788,7 +1799,7 @@ cXdotplot3 <- function() {
     legendColumns=2,
     legendInside=TRUE,
     legendPosition="rightBottom",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Measurements on 38 1978-79 model automobiles.\nThe gas mileage in miles per gallon as measured by Consumers Union on a test track.",
     afterRender=list(list("groupSamples", list("Country")))
@@ -1806,7 +1817,7 @@ cXdotplot4 <- function() {
     connectBy="Connect",
     dotplotType="stacked",
     graphType="Dotplot",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpTitle="School",
     sortDir="descending",
     theme="CanvasXpress",
@@ -2049,6 +2060,21 @@ cXdotplot10 <- function() {
   )
 }
 
+cXdotplot11 <- function() {
+  library(canvasXpress)
+  y=read.table(get_data("cX-exprtcga-dat.txt.gz"), header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+  x=read.table(get_data("cX-exprtcga-smp.txt.gz"), header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+  canvasXpress(
+    data=y,
+    smpAnnot=x,
+    binned=TRUE,
+    graphOrientation="vertical",
+    graphType="Dotplot",
+    groupingFactors=list("dataset"),
+    jitter=FALSE
+  )
+}
+
 cXgantt1 <- function() {
   library(canvasXpress)
   y=read.table(get_data("cX-gantt-dat.txt.gz"), header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
@@ -2183,7 +2209,7 @@ cXheatmap2 <- function() {
     graphType="Heatmap",
     heatmapCellBoxColor="rgb(255,255,255)",
     samplesClustered=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Clustered data",
     variablesClustered=TRUE
   )
@@ -2318,7 +2344,7 @@ cXheatmap8 <- function() {
     highlightSmp=list("Sample1", "Sample2", "Sample3", "Sample4", "Sample5"),
     highlightVar=list("Probe18", "Probe19", "Probe20"),
     samplesClustered=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpOverlays=list("Treatment", "Site"),
     title="Highlight cells in Heatmap",
     variablesClustered=TRUE
@@ -2343,7 +2369,7 @@ cXheatmap9 <- function() {
     heatmapIndicatorPosition="topLeft",
     heatmapIndicatorWidth=60,
     samplesClustered=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpOverlayProperties=list(Dose=list(position="right", thickness=50, type="Dotplot"), Site=list(position="left"), Treatment=list(position="right")),
     smpOverlays=list("Treatment", "Site", "Dose"),
     title="Advanced Overlays in Heatmaps",
@@ -2403,7 +2429,7 @@ cXheatmap12 <- function() {
     smpAnnot=x,
     varAnnot=z,
     graphType="Heatmap",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelScaleFontFactor=1.1,
     smpOverlayProperties=list(Binary=list(position="left", scheme="BlackAndWhite", type="Default"), Boolean=list(position="left"), Continuous=list(position="left", spectrum=list("green", "white"), type="Heatmap"), Discrete=list(position="left", thickness=30, type="Default"), Early=list(color="blue", position="right", thickness=50, type="Line"), Late=list(color="red", position="right", thickness=50, type="Line"), OnTime=list(color="green", position="right", thickness=50, type="Line"), PhaseA=list(position="left", thickness=50, type="Bar"), PhaseB=list(position="left", thickness=50, type="Bar"), PhaseC=list(position="left", thickness=50, type="Bar"), Temp=list(position="right", spectrum=list("blue", "white", "red"), thickness=100, type="Heatmap")),
     smpOverlays=list("PhaseA", "PhaseB", "PhaseC", "-", "-", "Binary", "Boolean", "Continuous", "Discrete", "-", "-", "Temp", "-", "-", "Early", "OnTime", "Late"),
@@ -2427,7 +2453,7 @@ cXhistogram1 <- function() {
     citation="Cameron, E. and Pauling, L. (1978). Proceedings of the National Academy of Science USA, 75.",
     graphType="Scatter2D",
     histogramBins=50,
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Patients with advanced cancers of the stomach,\nbronchus, colon, ovary or breast treated with ascorbate.",
     xAxisTitle="Survival (days)",
@@ -2449,7 +2475,7 @@ cXhistogram2 <- function() {
     citation="Cameron, E. and Pauling, L. (1978). Proceedings of the National Academy of Science USA, 75.",
     graphType="Scatter2D",
     histogramBins=10,
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Patients with advanced cancers of the stomach,\nbronchus, colon, ovary or breast treated with ascorbate.",
     xAxisTitle="Survival (days)",
@@ -2469,7 +2495,7 @@ cXhistogram3 <- function() {
     decorations=list(marker=list(list(sample=list("Alcohol", "Tobacco"), text="Maybe an Outlier?", variable="Northern Ireland", x=0.45, y=0.18))),
     graphType="Scatter2D",
     histogramBins=20,
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Average weekly household spending, in British pounds, on tobacco products\nand alcoholic beverages for each of the 11 regions of Great Britain.",
     xAxisTitle="Pounds Spent",
@@ -2487,7 +2513,7 @@ cXkaplanmeier1 <- function() {
     showConfidenceIntervals=FALSE,
     showDecorations=TRUE,
     showLegend=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Kaplan-Meier Plot",
     afterRender=list(list("addKaplanMeierCurve", list('Time','Censor')))
   )
@@ -2502,7 +2528,7 @@ cXkaplanmeier2 <- function() {
     showConfidenceIntervals=TRUE,
     showDecorations=TRUE,
     showLegend=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Kaplan-Meier Plot",
     afterRender=list(list("addKaplanMeierCurve", list('Time','Censor')))
   )
@@ -2654,7 +2680,7 @@ cXlayout6 <- function() {
     fontStyle="italic",
     graphOrientation="vertical",
     graphType="Boxplot",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelFontStyle="italic",
     smpLabelRotate=90,
     smpTitle="Species",
@@ -2678,7 +2704,7 @@ cXlayout7 <- function() {
     graphType="Dotplot",
     legendColumns=3,
     legendPosition="bottom",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Measurements on 38 1978-79 model automobiles.\nThe gas mileage in miles per gallon as measured by Consumers Union on a test track.",
     afterRender=list(list("groupSamples", list("Country")), list("segregateSamples", list("Country")))
@@ -2696,7 +2722,7 @@ cXlayout8 <- function() {
     varAnnot=z,
     graphOrientation="vertical",
     graphType="Bar",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     afterRender=list(list("groupSamples", list("Factor1")), list("segregateSamples", list("Factor1")))
   )
@@ -2713,7 +2739,7 @@ cXlayout9 <- function() {
     varAnnot=z,
     graphOrientation="horizontal",
     graphType="Bar",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     afterRender=list(list("segregateSamples", list("Factor1")), list("segregateVariables", list("Annt2")))
   )
@@ -2731,7 +2757,7 @@ cXlayout10 <- function() {
     graphOrientation="vertical",
     graphType="Bar",
     layoutType="rows",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     afterRender=list(list("segregateVariables", list("Annt2")), list("segregateSamples", list("Factor1")))
   )
@@ -2746,7 +2772,7 @@ cXlayout11 <- function() {
     smpAnnot=x,
     graphOrientation="vertical",
     graphType="Boxplot",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=90,
     smpTitle="Smoking Status",
     afterRender=list(list("groupSamples", list("Smoker")), list("createDOE"))
@@ -2802,7 +2828,7 @@ cXlayout14 <- function() {
     smpAnnot=x,
     varAnnot=z,
     graphType="Heatmap",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelScaleFontFactor=1.1,
     smpOverlayProperties=list(Binary=list(position="left", scheme="BlackAndWhite", type="Default"), Continuous=list(position="left", spectrum=list("green", "white"), type="Heatmap"), Discrete=list(position="left", thickness=30, type="Default"), Early=list(color="blue", position="right", thickness=50, type="Line"), Late=list(color="red", position="right", thickness=50, type="Line"), OnTime=list(color="green", position="right", thickness=50, type="Line"), PhaseA=list(position="left", thickness=50, type="Bar"), PhaseB=list(position="left", thickness=50, type="Bar"), PhaseC=list(position="left", thickness=50, type="Bar"), Temp=list(position="right", spectrum=list("blue", "white", "red"), thickness=100, type="Heatmap")),
     smpOverlays=list("PhaseA", "PhaseB", "PhaseC", "-", "-", "Binary", "Continuous", "Discrete", "-", "-", "Temp", "-", "-", "Early", "OnTime", "Late"),
@@ -2825,8 +2851,7 @@ cXline1 <- function() {
     graphOrientation="vertical",
     graphType="Line",
     lineType="spline",
-    showAnimation=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=45,
     smpOverlays=list("Factor1", "Factor2", "Factor3"),
     smpTitle="Collection of Samples",
@@ -2855,7 +2880,6 @@ cXline2 <- function() {
     legendBackgroundColor=FALSE,
     legendInside=TRUE,
     legendPosition="right",
-    showAnimation=TRUE,
     smpOverlays=list("Factor1", "Factor2", "Factor3"),
     smpTitle="Collection of Samples",
     smpTitleFontStyle="italic",
@@ -2875,7 +2899,7 @@ cXline3 <- function() {
     graphType="Line",
     lineErrorType="area",
     lineType="spline",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     afterRender=list(list("groupSamples", list("Time")))
   )
@@ -2906,7 +2930,7 @@ cXmap2 <- function() {
     colorBy="Order",
     graphType="Map",
     leafletConfig=list(attributionControl=TRUE, center=list(30, 0), zoom=1.5),
-    leafletId="countries",
+    leafletId="countriesOrder",
     leafletLayer=FALSE,
     topoJSON="https://www.canvasxpress.org/json/world.geo.json"
   )
@@ -2922,7 +2946,7 @@ cXmap3 <- function() {
     colorBy="Order",
     graphType="Map",
     leafletConfig=list(attributionControl=TRUE, center=list(30, 0), zoom=1.5),
-    leafletId="countries",
+    leafletId="countriesOrderL",
     leafletLayer=TRUE,
     topoJSON="https://www.canvasxpress.org/json/world.geo.json"
   )
@@ -3096,7 +3120,6 @@ cXnetwork6 <- function() {
     edgeData=edges,
     coordinateNetworkConvexHullCommunityColor=TRUE,
     graphType="Network",
-    showAnimation=TRUE,
     showNetworkCommunities=TRUE,
     title="Zachary's famous Karate Club"
   )
@@ -3115,7 +3138,6 @@ cXnetwork7 <- function() {
     networkFreeze=TRUE,
     networkNodesOnTop=FALSE,
     preScaleNetwork=FALSE,
-    showAnimation=FALSE,
     showNodeNameThreshold=20000,
     title="Apoptosis"
   )
@@ -3135,7 +3157,6 @@ cXnetwork8 <- function() {
     networkFreeze=TRUE,
     networkNodesOnTop=FALSE,
     preScaleNetwork=FALSE,
-    showAnimation=FALSE,
     showNodeNameThreshold=20000,
     title="Apoptosis"
   )
@@ -3237,7 +3258,7 @@ cXoncoprint1 <- function() {
     graphType="Heatmap",
     oncoprintCNA="data2",
     oncoprintMUT="data3",
-    showTransition=TRUE
+    showTransition=FALSE
   )
 }
 
@@ -3256,7 +3277,7 @@ cXoncoprint2 <- function() {
     graphType="Heatmap",
     oncoprintCNA="data2",
     oncoprintMUT="data3",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpOverlayProperties=list(Annt2=list(position="right", type="Bar"), Annt3=list(type="Stacked"), Annt4=list(type="Stacked"), Annt5=list(type="Stacked")),
     smpOverlays=list("Annt1", "-", "Annt2", "Annt3", "Annt4", "Annt5")
   )
@@ -3311,7 +3332,7 @@ cXparallelcoordinates1 <- function() {
     graphOrientation="vertical",
     graphType="ParallelCoordinates",
     lineDecoration=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=90,
     theme="CanvasXpress",
     title="Iris flower data set"
@@ -3352,7 +3373,7 @@ cXpie1 <- function() {
     pieSegmentSeparation=1,
     showPieGrid=TRUE,
     showPieSampleLabel=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     xAxis=list("Sample1", "Sample2", "Sample3", "Sample4", "Sample5", "Sample6")
   )
 }
@@ -3371,7 +3392,7 @@ cXpie2 <- function() {
     pieSegmentPrecision=1,
     pieSegmentSeparation=2,
     pieType="solid",
-    showTransition=TRUE
+    showTransition=FALSE
   )
 }
 
@@ -3390,7 +3411,7 @@ cXradar1 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     ringGraphType=list("line"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Radar - Line",
     transitionStep=50,
     transitionTime=1500
@@ -3413,7 +3434,7 @@ cXradar2 <- function() {
     graphType="Circular",
     legendPosition="top",
     ringGraphType=list("area"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Radar - Area",
     transitionStep=50,
     transitionTime=1500
@@ -3435,7 +3456,7 @@ cXradar3 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     ringGraphType=list("bar"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Radar - Bar",
     transitionStep=50,
     transitionTime=1500
@@ -3458,7 +3479,7 @@ cXradar4 <- function() {
     graphType="Circular",
     legendPosition="top",
     ringGraphType=list("dot"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Radar - Scatter",
     transitionStep=50,
     transitionTime=1500
@@ -3481,7 +3502,7 @@ cXradar5 <- function() {
     graphType="Circular",
     legendPosition="top",
     ringGraphType=list("stacked"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Radar - Stacked",
     transitionStep=50,
     transitionTime=1500
@@ -3503,7 +3524,7 @@ cXradar6 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     ringGraphType=list("line"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Half Radar",
     transitionStep=50,
     transitionTime=1500
@@ -3526,7 +3547,7 @@ cXradar7 <- function() {
     graphType="Circular",
     legendPosition="top",
     ringGraphType=list("line"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Rotated Half Radar",
     transitionStep=50,
     transitionTime=1500
@@ -3548,7 +3569,7 @@ cXradar8 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     ringGraphType=list("line"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpOverlays=list("Factor3", "-", "Factor1", "Factor2"),
     title="Radar with Overlays",
     transitionStep=50,
@@ -3567,7 +3588,7 @@ cXsankey1 <- function() {
     graphType="Sankey",
     sankeySource="Source",
     sankeyTarget="Target",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Single Level Sankey"
   )
@@ -3632,7 +3653,7 @@ cXscatter2d1 <- function() {
     citation="Moore, David S., and George P. McCabe (1989). Introduction to the Practice of Statistics, p. 179.",
     decorations=list(marker=list(list(sample=list("Alcohol", "Tobacco"), text="Maybe an Outlier?", variable="Northern Ireland", x=0.45, y=0.18))),
     graphType="Scatter2D",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Average weekly household spending, in British pounds, on tobacco products\nand alcoholic beverages for each of the 11 regions of Great Britain.",
     xAxis=list("Alcohol"),
@@ -3690,7 +3711,7 @@ cXscatter2d4 <- function() {
     setMinX=0,
     setMinY=0,
     shapeBy="Smoker",
-    showTransition=TRUE,
+    showTransition=FALSE,
     sizeBy="Age",
     theme="CanvasXpress",
     title="Data on the time subjects required to complete a pencil and paper maze\nwhen they were smelling a floral scent and when they were not.",
@@ -3803,7 +3824,7 @@ cXscatter2d9 <- function() {
     legendInside=TRUE,
     plotBox=FALSE,
     showDecorations=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Mean annual temperature (in degrees F) and Mortality Index for neoplasms of the female breast.",
     xAxis=list("Mortality"),
@@ -3856,7 +3877,7 @@ cXscatter2d11 <- function() {
     showConfidenceIntervals=FALSE,
     showDecorations=TRUE,
     showLoessFit=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     sizeBy="FC",
     sizes=list(4, 14, 16, 18),
     theme="CanvasXpress",
@@ -3887,7 +3908,7 @@ cXscatter2d12 <- function() {
     legendBoxColor="rgb(0,0,0)",
     plotBox=FALSE,
     showDecorations=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     sizeBy="FC",
     sizes=list(4, 14, 16, 18),
     theme="CanvasXpress",
@@ -3920,7 +3941,7 @@ cXscatter2d13 <- function() {
     legendPosition="bottomRight",
     plotBox=FALSE,
     showDecorations=TRUE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     sizeBy="Hit",
     sizeByShowLegend=FALSE,
     sizes=list(4, 14),
@@ -4070,7 +4091,7 @@ cXscatterbubble2d1 <- function() {
     varAnnot=z,
     colorBy="Continent",
     graphType="ScatterBubble2D",
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     xAxis=list("LifeExpectancy"),
     yAxis=list("GDPPerCapita"),
@@ -4127,7 +4148,7 @@ cXstacked1 <- function() {
     graphType="Stacked",
     groupingFactors=list("Factor1"),
     sampleSpaceFactor=1,
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Random Data",
     treemapBy=list("Factor2", "Factor3")
   )
@@ -4226,7 +4247,7 @@ cXstackedline1 <- function() {
     graphType="StackedLine",
     lineThickness=3,
     lineType="spline",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpTitle="Collection of Samples",
     smpTitleFontStyle="italic",
     subtitle="Random Data",
@@ -4276,7 +4297,7 @@ cXstackedpercent1 <- function() {
     graphType="StackedPercent",
     legendBackgroundColor=FALSE,
     sampleSpaceFactor=1,
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelScaleFontFactor=0.8,
     smpTitle="Collection of Samples",
     smpTitleFontStyle="italic",
@@ -4357,7 +4378,7 @@ cXstackedpercentline1 <- function() {
     graphType="StackedPercentLine",
     lineThickness=3,
     lineType="spline",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpTitle="Collection of Samples",
     smpTitleFontStyle="italic",
     subtitle="Random Data",
@@ -4406,7 +4427,7 @@ cXsunburst1 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     hierarchy=list("Quarter", "Month", "Week"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Simple Sunburst"
   )
 }
@@ -4425,7 +4446,7 @@ cXsunburst2 <- function() {
     colorScheme="RdYlBu",
     graphType="Circular",
     hierarchy=list("Quarter", "Month", "Week"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Simple Sunburst Colored by Category"
   )
 }
@@ -4443,7 +4464,7 @@ cXsunburst3 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     hierarchy=list("Quarter", "Month", "Week"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Rotated Sunburst"
   )
 }
@@ -4461,7 +4482,7 @@ cXsunburst4 <- function() {
     colorScheme="Bootstrap",
     graphType="Circular",
     hierarchy=list("Quarter", "Month", "Week"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Rotated Half Sunburst"
   )
 }
@@ -4477,7 +4498,7 @@ cXtagcloud1 <- function() {
     varAnnot=z,
     colorBy="Country",
     graphType="TagCloud",
-    showTransition=TRUE
+    showTransition=FALSE
   )
 }
 
@@ -4490,7 +4511,7 @@ cXtree1 <- function() {
     smpAnnot=x,
     graphType="Tree",
     hierarchy=list("Level1", "Level2", "Level3"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Collapsible Tree"
   )
 }
@@ -4505,7 +4526,7 @@ cXtree2 <- function() {
     colorBy="Annot1",
     graphType="Tree",
     hierarchy=list("Level1", "Level2", "Level3"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Collapsible Tree"
   )
 }
@@ -4520,7 +4541,7 @@ cXtree3 <- function() {
     colorBy="Annot2",
     graphType="Tree",
     hierarchy=list("Level1", "Level2", "Level3"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Collapsible Tree"
   )
 }
@@ -4535,7 +4556,7 @@ cXtree4 <- function() {
     colorBy="Annot2",
     graphType="Tree",
     hierarchy=list("Level1", "Level2", "Level3"),
-    showTransition=TRUE,
+    showTransition=FALSE,
     title="Collapsible Tree",
     treeCircular=TRUE
   )
@@ -4552,7 +4573,7 @@ cXtreemap1 <- function() {
     decorations=list(marker=list(list(align="center", baseline="middle", color="red", sample="Norway", text="Norway is the country\nwith the largest GNI\naccording to 2014 census", variable="population", x=0.65, y=0.7), list(align="center", baseline="middle", color="red", sample="China", text="China is the country with\nthe largest population\naccording to 2014 census", variable="population", x=0.15, y=0.1))),
     graphType="Treemap",
     showDecorations=FALSE,
-    showTransition=TRUE,
+    showTransition=FALSE,
     theme="CanvasXpress",
     title="Population colored by Gross National Income 2014",
     afterRender=list(list("groupSamples", list("continent")))
@@ -4587,7 +4608,7 @@ cXtreemap3 <- function() {
     graphType="Stacked",
     legendInside=TRUE,
     legendPosition="top",
-    showTransition=TRUE,
+    showTransition=FALSE,
     smpLabelRotate=45,
     subtitle="2014 Census",
     theme="CanvasXpress",
@@ -4605,7 +4626,7 @@ cXvenn1 <- function() {
     vennData=data.frame(A=340, AB=639, ABC=552, ABCD=148, ABD=578, AC=456, ACD=298, AD=257, B=562, BC=915, BCD=613, BD=354, C=620, CD=143, D=592),
     vennLegend=list(A="List 1", B="List 2", C="List 3", D="List 4"),
     graphType="Venn",
-    showTransition=TRUE,
+    showTransition=FALSE,
     vennGroups=4
   )
 }
@@ -4616,7 +4637,7 @@ cXvenn2 <- function() {
     vennData=data.frame(A=340, AB=639, ABC=552, ABCD=148, ABD=578, AC=456, ACD=298, AD=257, B=562, BC=915, BCD=613, BD=354, C=620, CD=143, D=592),
     vennLegend=list(A="List 1", B="List 2", C="List 3", D="List 4"),
     graphType="Venn",
-    showTransition=TRUE,
+    showTransition=FALSE,
     vennGroups=3
   )
 }
