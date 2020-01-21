@@ -11,7 +11,7 @@ if (interactive()) {
         select(url) %>%
         distinct()
 
-    # save all the datasets to the test data directory
+    # save all the datasets to the inst/extdata directory
     for (url in dataUrls$url) {
         loc <- file(url, method = "libcurl")
         data <- readLines(loc)
