@@ -2,7 +2,7 @@
 
 This is a new package - it is a split off of the data from the canvasXpress R package, as that package reached the 5MB limit as of the latest release (1.25.6).  
 
-The version number matches the version of the canvasXpress R package as of the data split so starts at a larger version than perhaps expected.  
+The version number matches the version of the canvasXpress R package as of the data split so starts at a larger version than perhaps expected.  Versions as of 1.26.7 of the canvasXpress package will depend on this package.  That package is being prepared and tested for this update but will require that this package is in CRAN prior to submission of the next version.
 
 ---  
     
@@ -51,9 +51,9 @@ devtools::check()
     
 ```
 pdb <- available.packages()
-tools::package_dependencies(packages = c('periscope'),
+tools::package_dependencies(packages = c('canvasxpress.data'),
                             db = pdb, reverse = TRUE)
 
-$canvasXpress  
-character(0)  
+$canvasXpress.data 
+NULL
 ```
