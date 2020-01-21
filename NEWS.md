@@ -1,6 +1,6 @@
 # NEWS
 
-## canvasxpress.data R Package 
+## canvasXpress.data R Package 
 
 ---
 ### v1.26.7
