@@ -333,7 +333,7 @@ cXbar7 <- function() {
     smpOverlays=list("Drug Sensitivity"),
     smpTitle="Cell Lines",
     smpTitleFontStyle="bold",
-    theme="CanvasXpress",
+    theme="CanavasXpress",
     title="Random data set",
     xAxis2Show=FALSE
   )
