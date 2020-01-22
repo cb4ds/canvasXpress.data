@@ -2,7 +2,9 @@
 
 **resubmission comments**
 
-Fixed Title/Description for the package single-quoting canvasXpress and removing the redunant R
+Fixed Title/Description for the package single-quoting canvasXpress and removing the redunant R.
+
+Added back the period at the end of the description sentence.
 
 **initial comments**
 
