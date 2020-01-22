@@ -1,5 +1,11 @@
 ## Comments from Maintainer
 
+**resubmission comments**
+
+Fixed Title/Description for the package single-quoting canvasXpress and removing the redunant R
+
+**initial comments**
+
 This is a new package - it is a split off of the data from the canvasXpress R package, as that package reached the 5MB limit as of the latest release (1.25.6).  
 
 The version number matches the version of the canvasXpress R package as of the data split so starts at a larger version than perhaps expected.  Versions as of 1.26.7 of the canvasXpress package will depend on this package.  That package is being prepared and tested for this update but will require that this package is in CRAN prior to submission of the next version.
