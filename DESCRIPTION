@@ -1,5 +1,5 @@
 Package: canvasXpress.data
-Version: 1.26.7
+Version: 1.26.8.9001
 Title: Data for the 'canvasXpress' Package
 Description: Contains the data that is needed for the visual examples in the 'canvasXpress' Package as well as datasets used in tests.
 Type: Package
@@ -17,6 +17,9 @@ BugReports:
 Depends:
     R (>= 3.4)
 Suggests:
-    dplyr
+    dplyr,
+    tibble,
+    tidyr,
+    usethis
 LazyData: true
 RoxygenNote: 7.0.2
