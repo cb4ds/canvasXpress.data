@@ -3,10 +3,7 @@ require('dplyr')
 require('tidyr')
 require('tibble')
 require('usethis')
-
-
-exData <- readRDS("data-raw/exData-sm2.rds")
-usethis::use_data(exData, overwrite = TRUE)
+require('GEOquery')
 
 
 # GSE9750 preparation from source
@@ -14,12 +11,12 @@ usethis::use_data(exData, overwrite = TRUE)
 y <- readr::read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 73, n_max = 22283) %>% as.data.frame()
 rownames(y) <- y$ID_REF; y$ID_REF <- NULL
 
-z <- readr::read_delim('data-raw/GPL96.annot.gz', '\t', skip = 27) %>%
+z <- getGEO("GPL96", destdir = tempdir())
+z <- z@dataTable@table %>%
     rename(vars        = ID,
-           Description = `Gene title`,
-           Locus       = `Chromosome location`,
-           Symbol      = `Gene symbol`) %>%
-    select(vars, Description, Locus, Symbol) %>%
+           Description = `Gene Title`,
+           Symbol      = `Gene Symbol`) %>%
+    select(vars, Description, Symbol) %>%
     as.data.frame()
 rownames(z) <- z$vars
 

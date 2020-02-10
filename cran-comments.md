@@ -2,9 +2,10 @@
 
 **resubmission comments**
 
-Fixed Title/Description for the package single-quoting canvasXpress and removing the redunant R.
+Per request for better information on the dataset(s) in this package: 
 
-Added back the period at the end of the description sentence.
+Updated attribution and informaton for the dataset GSE9750, and created a more reusable preparation script.  
+Second dataset exData was removed until it can be sourced publicly and documented.
 
 **initial comments**
 

@@ -25,8 +25,3 @@ NULL
 #' @format A list of 3 dataframes containing prepared expression, gene, and sample data
 #' 
 "GSE9750"
-
-#' IPF Fibroblast data
-#'
-#' @format A list of 4 dataframes
-"exData"
