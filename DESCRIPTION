@@ -1,5 +1,5 @@
 Package: canvasXpress.data
-Version: 1.26.8
+Version: 1.26.9
 Title: Data for the 'canvasXpress' Package
 Description: Contains the data that is needed for the visual examples in the 'canvasXpress' Package as well as datasets used in tests.
 Type: Package
