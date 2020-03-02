@@ -1,22 +1,10 @@
 ## Comments from Maintainer
 
-**resubmission comments 2**
-
-NOTE: The package was put into archive from newbies without communication from CRAN maintainers - I'm resubmitting to find out what needs to be resolved.  This is now holding up a release of the canvasXpress package which it was split off of and relies on this package now for the data.  Please let me know what needs to be done to get this package through the publication process.  This is the first time I've had to resubmit a package without hearing back about the original package.
-
-
-**resubmission comments**
-Per request for better information on the dataset(s) in this package: 
-
-Updated attribution and informaton for the dataset GSE9750, and created a more reusable preparation script.  
-Second dataset exData was removed until it can be sourced publicly and documented.
-
-
-**initial comments**
-
 This is a new package - it is a split off of the data from the canvasXpress R package, as that package reached the 5MB limit as of the latest release (1.25.6).  
 
-The version number matches the version of the canvasXpress R package as of the data split so starts at a larger version than perhaps expected.  Versions as of 1.26.8 of the canvasXpress package will depend on this package.  That package is being prepared and tested for this update but will require that this package is in CRAN prior to submission of the next version.
+The version number matches the version of the canvasXpress R package as of the data split so starts at a larger version than perhaps expected.  Versions as of 1.27.1+ of the canvasXpress package will depend on this package.  That package is being prepared and tested for this update but will require that this package is in CRAN prior to submission of the next version.
+
+Per request for better information on the dataset(s) in this package in previous reviews I have updated attribution and informaton for the dataset GSE9750, and created a more reusable preparation script.  In addition the second dataset exData was removed until it can be sourced publicly and documented.
 
 ---  
     
@@ -62,6 +50,8 @@ devtools::check()
     
     
 **NONE**
+
+Note: The canvasXpress package will suggest the use of this package
     
 ```
 pdb <- available.packages()
