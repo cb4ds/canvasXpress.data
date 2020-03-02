@@ -17,9 +17,9 @@ output:
 
 
 ***canvasXpress*** was developed as the core visualization component for bioinformatics and systems biology analysis
-at Bristol-Myers Squibb. It supports a large number of [visualizations ](http://www.canvasxpress.org/html/gallery.html) 
+at Bristol-Myers Squibb. It supports a large number of [visualizations ](http://www.canvasxpress.org/examples.html) 
 to display scientific and non-scientific data. ***canvasXpress*** also includes a simple and unobtrusive 
-[user interface](http://www.canvasxpress.org/html/user-interface.html) to explore complex data sets -- data can
+[user interface](http://www.canvasxpress.org/docs/interface.html) to explore complex data sets -- data can
 be easily sorted, grouped, transposed, transformed or clustered dynamically.  The canvasXpress R package is available on 
 [CRAN](https://CRAN.R-project.org/package=canvasXpress) and [GitHub](https://github.com/neuhausi/canvasXpress). 
 
