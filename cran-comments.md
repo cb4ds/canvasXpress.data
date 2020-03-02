@@ -6,7 +6,7 @@ The version number matches the version of the canvasXpress R package as of the d
 
 Per review request for better information on the dataset(s) in this package in previous reviews I have updated attribution and informaton for the dataset GSE9750, and created a more reusable preparation script.  In addition the second dataset exData was removed until it can be sourced publicly and documented.
 
-Per review request I have fixed the README.md links (our website was literally just revamped 2 days ago!).  Thanks for pointing that out!
+Per review request I have fixed the README.md links (our website was literally just revamped 2 days ago!).  Thanks for pointing that out!  I have incremented the package with the notation in the third version component adding -1 to designate that this minor bugfix was made, however I did not increment the base 3rd component of the version as it will become out of sync with the canvasXpress package that it is paired with.
 
 ---  
     
