@@ -1,11 +1,11 @@
 if (interactive()) {
     library(dplyr)
 
-    webFile <- readLines(con = "http://canvasxpress.org/data/cX-function.R")
+    webFile <- readLines(con = "https://canvasxpress.org/data/cX-function.R")
 
     #grab url download links
     dataUrls <- data.frame(line = webFile, stringsAsFactors = F) %>%
-        filter(grepl('read.table("http://www.canvasxpress.org', line,  fixed = TRUE)) %>%
+        filter(grepl('read.table("https://www.canvasxpress.org', line,  fixed = TRUE)) %>%
         mutate(url = gsub('.*=read.table\\("', '', line),
                url = gsub('", .*', '', url)) %>%
         select(url) %>%
