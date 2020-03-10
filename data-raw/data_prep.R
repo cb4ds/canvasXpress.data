@@ -3,13 +3,15 @@ require('dplyr')
 require('tidyr')
 require('tibble')
 require('usethis')
+require('readr')
 require('GEOquery')
 
 
 # GSE9750 preparation from source
 
-y <- readr::read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 73, n_max = 22283) %>% as.data.frame()
-rownames(y) <- y$ID_REF; y$ID_REF <- NULL
+y <- read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 73, n_max = 22283) %>% as.data.frame()
+rownames(y) <- y$ID_REF
+y$ID_REF <- NULL
 
 z <- getGEO("GPL96", destdir = tempdir())
 z <- z@dataTable@table %>%
@@ -21,7 +23,7 @@ z <- z@dataTable@table %>%
 rownames(z) <- z$vars
 
 
-x <- readr::read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 33, n_max = 37) %>%
+x <- read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 33, n_max = 37) %>%
     t() %>% as.data.frame(stringsAsFactors = F)
 colnames(x) <- gsub('!', '', x[1, ]); x <- x[-1, ]
 
@@ -43,5 +45,9 @@ x <- x %>%
 rownames(x) <- x$Sample_geo_accession; x$Sample_geo_accession <- NULL
 
 
-GSE9750 <- list(x = x, y = y, z = z)           
-usethis::use_data(GSE9750, overwrite = TRUE)
+GSE9750_cleaned <- list(x = x, y = y, z = z)           
+use_data(GSE9750_cleaned, overwrite = TRUE)
+
+GSE9750_original <- read_lines('data-raw/GSE9750_series_matrix.txt.gz')
+use_data(GSE9750_original, overwrite = TRUE)
+

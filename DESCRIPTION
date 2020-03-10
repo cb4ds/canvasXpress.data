@@ -1,7 +1,9 @@
 Package: canvasXpress.data
 Version: 1.27.4.9000
 Title: Data for the 'canvasXpress' Package
-Description: Contains the data that is needed for the visual examples in the 'canvasXpress' Package as well as datasets used in tests.
+Description: Contains the data that is needed for the shiny examples in the 'canvasXpress' package as well as datasets used in tests.  \
+    Scotto L, Narayan G, Nandula SV, Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>
+    Davis S, Meltzer PS (2007) <doi:/10.1093/bioinformatics/btm254>
 Type: Package
 License: GPL-3
 Encoding: UTF-8
