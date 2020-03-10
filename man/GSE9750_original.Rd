@@ -4,7 +4,7 @@
 \name{GSE9750_original}
 \alias{GSE9750_original}
 \title{Gene Expression Dataset - Cervical Cancer (original data)}
-\format{}
+\format{a character vector by lines read}
 \source{
 \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE9750}
 }

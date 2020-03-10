@@ -6,10 +6,13 @@ require('usethis')
 require('readr')
 require('GEOquery')
 
+# Get original data for GSE9750
+orig.file <- tempfile("data", fileext = ".txt.gz")
+download.file('ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE9nnn/GSE9750/matrix/GSE9750_series_matrix.txt.gz', 
+              orig.file, mode = 'wb')
 
-# GSE9750 preparation from source
 
-y <- read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 73, n_max = 22283) %>% as.data.frame()
+y <- read_delim(orig.file, '\t', skip = 73, n_max = 22283) %>% as.data.frame()
 rownames(y) <- y$ID_REF
 y$ID_REF <- NULL
 
@@ -23,7 +26,7 @@ z <- z@dataTable@table %>%
 rownames(z) <- z$vars
 
 
-x <- read_delim('data-raw/GSE9750_series_matrix.txt.gz', '\t', skip = 33, n_max = 37) %>%
+x <- read_delim(orig.file, '\t', skip = 33, n_max = 37) %>%
     t() %>% as.data.frame(stringsAsFactors = F)
 colnames(x) <- gsub('!', '', x[1, ]); x <- x[-1, ]
 
@@ -48,6 +51,6 @@ rownames(x) <- x$Sample_geo_accession; x$Sample_geo_accession <- NULL
 GSE9750_cleaned <- list(x = x, y = y, z = z)           
 use_data(GSE9750_cleaned, overwrite = TRUE)
 
-GSE9750_original <- read_lines('data-raw/GSE9750_series_matrix.txt.gz')
+GSE9750_original <- read_lines(orig.file)
 use_data(GSE9750_original, overwrite = TRUE)
 

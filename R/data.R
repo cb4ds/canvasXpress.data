@@ -40,6 +40,6 @@ NULL
 #' 
 #' @source \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE9750}
 #' 
-#' @format 
+#' @format a character vector by lines read
 #' 
 "GSE9750_original"
