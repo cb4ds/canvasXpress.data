@@ -13,7 +13,7 @@ This example dataset is the gene information for genes present in the GSE9750 st
 below.  The data was retrieved from the GEOquery package referenced below.
 
 This dataset was prepared for visualization by renaming the columns and subsetting to only the information
-necessary for visualization.  The Symbol and Description fields were also cleaned.
+necessary for visualization.  The Symbol and Description fields were also cleaned and prepared.
 }
 \references{
 Davis, S. and Meltzer, P. S. GEOquery: a bridge between the Gene Expression Omnibus (GEO) and
