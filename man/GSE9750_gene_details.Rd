@@ -4,7 +4,9 @@
 \name{GSE9750_gene_details}
 \alias{GSE9750_gene_details}
 \title{Gene Expression Dataset - Cervical Cancer (gene details)}
-\format{A dataframe containing gene metadata for the GSE9750 study}
+\format{
+A dataframe containing gene metadata for the GSE9750 study
+}
 \usage{
 GSE9750_gene_details
 }
