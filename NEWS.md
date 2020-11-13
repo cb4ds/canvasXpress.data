@@ -3,6 +3,9 @@
 ## canvasXpress.data R Package 
 
 ---
+### v1.30.3
+* Testing datasets added, updated
+
 ### v1.29.0
 * New testing datasets added
 
