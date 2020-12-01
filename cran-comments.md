@@ -1,6 +1,7 @@
 ## Comments from Maintainer
 
-New Datasets Added
+New data sets added, existing ones updated
+Bugfix to test data pull
 
 ---  
     
@@ -8,21 +9,19 @@ New Datasets Added
     
 RStudio Server Pro (ubuntu 18.04.2)  
 
-* R 3.5.3  
 * R 3.6.3
-* R 4.0.1
+* R 4.0.2
 
 Travis-CI (ubuntu 16.04.6)
 
 * R 3.6.3
-* R 4.0.0
-* R devel (2020-08-03 r78964)
+* R 4.0.2
+* R devel (2020-11-30 r79529)
 
 WinBuilder
 
 * devtools::check_win_devel()  
 * devtools::check_win_release()  
-* devtools::check_win_oldrelease()  
 
 
 RHub
