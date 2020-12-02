@@ -1,7 +1,13 @@
 ## Comments from Maintainer
 
-New data sets added, existing ones updated
-Bugfix to test data pull
+Resubmission Comments
+
+* revdep file ignore typo fixed - build now properly ignores this directory (apologies!)
+
+Original Comments
+
+* New data sets added, existing ones updated
+* Bugfix to test data pull
 
 ---  
     
