@@ -44,17 +44,25 @@ devtools::check()
 ---  
     
 ## Reverse dependencies
-    
-    
-**NONE**
 
-Note: The canvasXpress package will suggest the use of this package
-    
+* canvasXpress    
+
 ```
-pdb <- available.packages()
-tools::package_dependencies(packages = c('canvasxpress.data'),
-                            db = pdb, reverse = TRUE)
+revdepcheck::cran_revdeps('canvasXpress.data')
 
-$canvasXpress.data 
-NULL
+[1] "canvasXpress"      "canvasXpress.data"
+```
+
+```
+revdepcheck::revdep_reset()
+revdepcheck::revdep_check()
+revdepcheck::revdep_report_cran()
+
+## revdepcheck results
+
+We checked 1 reverse dependencies (0 from CRAN + 1 from BioConductor), comparing R CMD check results across CRAN and dev versions of this package.
+
+ * We saw 0 new problems
+ * We failed to check 0 packages
+
 ```
