@@ -2,12 +2,12 @@ if (interactive()) {
     library(dplyr)
 
     webFile <- readLines(con = "https://canvasxpress.org/data/cX-function.R")
-
+    
     #grab url download links
     dataUrls <- data.frame(line = webFile, stringsAsFactors = F) %>%
         filter(grepl('read.table("https://www.canvasxpress.org', line,  fixed = TRUE)) %>%
         #exclude specific larger files
-        filter(!grepl('cX-codiv|LungCancinoma|visium', line)) %>% 
+        filter(!grepl('cX-codiv|LungCancinoma|visium|olympic|exprtcga', line)) %>% 
         mutate(url = gsub('.*=read.table\\("', '', line),
                url = gsub('", .*', '', url)) %>%
         select(url) %>%
